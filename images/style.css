@@ -3,3 +3,113 @@
   margin: 0;
   box-sizing: border-box;
 }
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.list{
+ 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+
+}
+.list li img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 300ms ease-in-out;
+  
+}
+.list li{
+  width: 200px;
+  height:200px;
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+
+}  
+.list img:hover{
+  opacity: .4;
+}
+.open-btn{
+  
+  color: rgb(149, 50, 66);
+  background-image: url(../images/newjeans-raibbin.jpg);
+  background-repeat:no-repeat;
+  background-size: cover;
+  text-align: center;
+  line-height: 200px;
+  font-weight: bold;
+ 
+  transition: all 200ms ease-in-out;
+}
+.open-btn:hover{
+  border: 1px solid darkorchid;
+  color: darkviolet;
+
+}
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 250;
+  
+  width: 600px;
+  transform: translate(-50%,50%);
+  background-color:#ea86dc;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+.modal-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-weight: bold;
+  border-bottom: 4px solid #570855;
+}
+.close-btn{
+  font-size: 25px;
+}
+.modal-sec{
+  padding: 15px;
+}
+.modal-sec img{
+  width: 150px;
+  height: 250px;
+  object-fit: cover;
+
+}
+.modal-sec p {
+  margin-top: 5px;
+}
+.img-modal-box{
+  padding: 20px;
+}
+.img-modal-btn{
+  float: right;
+}
+.img-modal-wrapper{
+height: 500px;
+overflow: hidden;
+clear: right;
+}
+.img-modal-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+.overylay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, .5);
+
+}
