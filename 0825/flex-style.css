@@ -1,0 +1,77 @@
+:root{
+  --snail :#283491;
+  --owl :  #f18684;
+  --cat :  #6ee2f1;
+}
+
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+ 
+}
+.card-list{
+  display: flex;
+  width: 1280px;
+  height: 400px;
+  margin: 100px auto;
+}
+.card-itme{
+  position: relative;
+  flex-grow:1 ;
+  padding: 25px;
+  color: white;
+  transition: flex 500ms;
+
+}
+.card-itme .title{
+  font-size: 28px;
+  text-align: center;
+
+}
+.caption{
+  display: none;
+  max-width: 230px;
+  font-size: 12px;
+  margin: 28px 0;
+
+}
+.card-itme img{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+
+}
+.card-itme:hover{
+  flex-grow: 2.5;
+}
+.card-itme:hover .caption{
+  display: block;
+}
+.card-itme :hover .title h1{
+  text-align: left;
+}
+.caption button{
+border: none;
+outline: none;
+background-color: transparent;
+border: 1px solid #fff;
+padding: 8px 18px;
+border-radius: 40px;
+color: white;
+margin-top: 20px;
+}
+
+.card-itme:nth-child(1){
+  background-color: var(--snail);
+
+}
+.card-itme:nth-child(2){
+  background-color: var(--owl);
+  
+}
+.card-itme:nth-child(3){
+  background-color: var(--cat);
+  
+}
