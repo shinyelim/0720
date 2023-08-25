@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="./flex-style.css">
 </head>
 <body>
-<div class="wrap">
+<!--<div class="wrap">
 <div class="card-list">
-  <div class="card-itme">
+  <div class="card-item">
     <h1 class="title">달팽이</h1>
     <div class="caption">
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae alias voluptas et natus, facilis ut harum quaerat sunt.</p>
@@ -17,7 +17,7 @@
     </div>
     <img src="./images/pexels-photo-10628204-removebg-preview.png" alt="달팽이-이미지">
   </div>
-  <div class="card-itme">
+  <div class="card-item">
     <h1 class="title">부엉이</h1>
     <div class="caption">
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae alias voluptas et natus, facilis ut harum quaerat sunt.</p>
@@ -25,7 +25,7 @@
     </div>
     <img src="./images/ow-removebg-preview.png" alt="부엉이-이미지">
   </div>
-  <div class="card-itme">
+  <div class="card-item">
     <h1 class="title">고양이</h1>
     <div class="caption">
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae alias voluptas et natus, facilis ut harum quaerat sunt.</p>
@@ -34,8 +34,49 @@
     <img src="./images/cat-3.png" alt="고양이-이미지">
   </div>
 </div>
-</div> 
+</div>-->
 <script>
+let workout = [
+  {
+    title : '달팽이',
+    img : './images/pexels-photo-10628204-removebg-preview.png'
+  },
+  {
+    title : '부엉이',
+    img : './images/ow-removebg-preview.png'
+  },
+  {
+    title : '고양이',
+    img : './images/cat-3.png'
+  }
+]
+/*workout.forEach((item) => {
+let cardItem = `
+<div class="card-item">
+    <h1>${item.title}</h1>
+    <div class="caption">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae alias voluptas et natus, facilis ut harum quaerat sunt.</p>
+      <button type="button">Know More</button>
+    </div>
+    <img src="${item.img}" alt="${item.title} 이미지">
+  </div>
+ `
+  document.querySelector('.card-list').insertAdjacentHTML('beforeend',cardItem)
+})*/
+workout.forEach((item) => {
+  let cardItem = `
+    <div class="card-item">
+      <h2>${item.title}</h2>
+      <div class="caption">
+        <p>Strength does not come from the physical capacity. It comes from an indomitable will. Know more</p>
+        <button type="button">Know more</button>
+      </div>
+      <img src="${item.img}" alt="${item.title} 이미지">
+    </div>
+  `
+
+  document.querySelector('.card-list').insertAdjacentHTML('beforeend', cardItem)
+})
 
 </script> 
 </body>
