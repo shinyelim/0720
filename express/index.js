@@ -32,7 +32,7 @@
 // node_modules : 라이브러리 사용할 때 필요한 것들이 담긴 폴더
 
 // express로 서버 만드는 문법
-const express = require('express');
+const express =  require('express');
 const app = express();
 
 // port : 컴퓨터에는 외부 네트워크랑 통신을 할 수 있는 여러개의 구멍이 있는데,
@@ -158,7 +158,7 @@ app.post('/add', function(requests, response){
     console.log(result.wrapData) // total collection있는 총 데이터 수
     let wrapDataLength = result.wrapData;
 
-    db.collection('post').insertOne({_id : 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
+    db.collection('post').insertOne({_id : wrapDataLength + 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
       console.log('db에 저장완료!')
     })
   
@@ -188,6 +188,23 @@ app.get('/add', function(requests, response){
   })
 
 
+})
+app.delete('/delete', function (requests,response) {
+  console.log(requests.body)
+  //close 버튼을 클릭했을때 삭제되는것을 저장
+  requests.body._id = parseInt(requests.body._id)
+  db.collection('post').deleteOne({_id : requests.body._id }, function (error,result) {
+    if (error) {
+      console.log(error)
+    }
+    console.log('삭제완료!')
+  })
+  response.status(200).send({message : '성공적'})
+  //서버에서 응답코드로 요청의 상태를 표시함//
+  //200번호는 에러없이 요청을 성공적인 상태를 표시하는 응답코드
+  //404는 이용자의 문제로 요청 실패 응답코드
+  //500는 서버문제로 요청실패 응답코드
+  //삭제버튼이 클릭된 해당요소의 데이터가 삭제
 })
 
 //데이터를 전부 찾고싶으면 find()
